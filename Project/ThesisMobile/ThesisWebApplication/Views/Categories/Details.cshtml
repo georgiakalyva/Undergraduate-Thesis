@@ -1,0 +1,53 @@
+﻿@model ThesisWebApplication.Models.Category
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Category</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <label>Category Name</label>
+
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CategoryName)
+        </dd>
+
+        <dt>
+            <label>Category Description</label>
+
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CategoryDescription)
+        </dd>
+
+        <dt>
+            <label>Category Image</label>
+
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CategoryImage)
+        </dd>
+
+        <dt>Type</label>
+
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CategoryType1.CategoryType1)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

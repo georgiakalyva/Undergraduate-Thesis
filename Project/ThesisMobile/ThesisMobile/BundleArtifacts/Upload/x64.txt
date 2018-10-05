@@ -1,0 +1,1 @@
+MainPackage=E:\TFS\Thesis\Project\ThesisMobile\ThesisMobile\bin\x64\Release\Upload\ThesisMobile_1.0.1.0_x64.appx

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3137e3cf5e934b30a22e604f7957f9f3" Name="Diagram1" ZoomLevel="86">
+        <EntityTypeShape EntityType="ThesisDBModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="7.625" />
+        <EntityTypeShape EntityType="ThesisDBModel.AspNetRole" Width="1.5" PointX="9.75" PointY="3.375" />
+        <EntityTypeShape EntityType="ThesisDBModel.AspNetUserClaim" Width="1.5" PointX="14.25" PointY="1.875" />
+        <EntityTypeShape EntityType="ThesisDBModel.AspNetUserLogin" Width="1.5" PointX="14.25" PointY="4.625" />
+        <EntityTypeShape EntityType="ThesisDBModel.AspNetUser" Width="1.5" PointX="12" PointY="2.25" />
+        <EntityTypeShape EntityType="ThesisDBModel.Category" Width="1.5" PointX="3" PointY="3.75" />
+        <EntityTypeShape EntityType="ThesisDBModel.CategoryType" Width="1.5" PointX="0.75" PointY="4.125" />
+        <EntityTypeShape EntityType="ThesisDBModel.Challenge" Width="1.5" PointX="5.25" PointY="3.5" />
+        <EntityTypeShape EntityType="ThesisDBModel.ChallengeDay" Width="1.5" PointX="7.5" PointY="7.5" />
+        <EntityTypeShape EntityType="ThesisDBModel.ChallengeDayExersice" Width="1.5" PointX="7.5" PointY="3.5" />
+        <EntityTypeShape EntityType="ThesisDBModel.Exercise" Width="1.5" PointX="5.25" PointY="0.75" />
+        <EntityTypeShape EntityType="ThesisDBModel.RepeatType" Width="1.5" PointX="5.25" PointY="7.5" />
+        <AssociationConnector Association="ThesisDBModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="ThesisDBModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="ThesisDBModel.FK_Category_CategoryTypes" />
+        <AssociationConnector Association="ThesisDBModel.FK_Challenge_Category" />
+        <AssociationConnector Association="ThesisDBModel.FK_ChallengeDay_Challenge" />
+        <AssociationConnector Association="ThesisDBModel.FK_ChallengeDayExersices_ChallengeDayExersices" />
+        <AssociationConnector Association="ThesisDBModel.FK_ChallengeDayExersices_Exercise" />
+        <AssociationConnector Association="ThesisDBModel.FK_ChallengeDayExersices_RepeatTypes" />
+        <AssociationConnector Association="ThesisDBModel.AspNetUserRoles" />
+        <EntityTypeShape EntityType="ThesisDBModel.database_firewall_rules" Width="1.5" PointX="0.75" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,38 @@
+CREATE TABLE `Category` (
+	`CategoryID`	INTEGER NOT NULL,
+	`CategoryName`	TEXT NOT NULL,
+	`CategoryDescription`	TEXT NOT NULL,
+	PRIMARY KEY(CategoryID)
+);
+CREATE TABLE `Settings` (
+	`SettingID`	INTEGER NOT NULL,
+	`SettingName`	TEXT NOT NULL,
+	PRIMARY KEY(SettingID)
+);
+
+CREATE TABLE `Challenge` (
+	`CategoryID`	INTEGER NOT NULL,
+	`ChallengeID`	INTEGER NOT NULL,
+	`ChallengeName`	TEXT NOT NULL,
+	`ChallengeDescription`	TEXT NOT NULL,
+	`IsActive`	INTEGER NOT NULL,
+	PRIMARY KEY(ChallengeID)
+);
+CREATE TABLE `Exercise` (
+	`ExerciseID`	INTEGER NOT NULL,
+	`ExerciseName`	TEXT NOT NULL,
+	`ExerciseDescription`	TEXT NOT NULL,
+	PRIMARY KEY(ExerciseID)
+);
+
+CREATE TABLE `ChallengeExersiceDetails` (
+`ChallengeExersiceDetailsID`	INTEGER NOT NULL,
+`ChallengeID`	INTEGER NOT NULL,
+	`ExerciseID`	INTEGER NOT NULL,
+		`DayID`	INTEGER NOT NULL,
+	`Timer`	INTEGER NOT NULL,
+	`Repetitions`	INTEGER NOT NULL,
+	`Circuit`	INTEGER NOT NULL,
+	`Completed`	INTEGER NOT NULL,
+	PRIMARY KEY(ChallengeExersiceDetailsID)
+);

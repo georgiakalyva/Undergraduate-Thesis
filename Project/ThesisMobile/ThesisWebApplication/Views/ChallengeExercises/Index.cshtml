@@ -1,0 +1,63 @@
+﻿@model IEnumerable<ThesisWebApplication.Models.ChallengeDayExersice>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+           Day ID
+        </th>
+        <th>
+            Repeats
+        </th>
+        <th>
+            Challenge Title
+        </th>
+        <th>
+            Exercise Name
+        </th>
+        <th>
+            Repeat Type
+        </th>
+         <th>
+             Repeat Circuit
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DayID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Repeats)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Challenge.ChallengeTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Exercise.ExerciseName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RepeatType1.RepeatType1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RepeatCircuit)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

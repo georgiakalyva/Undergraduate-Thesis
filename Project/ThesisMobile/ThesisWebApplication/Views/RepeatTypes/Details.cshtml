@@ -1,0 +1,26 @@
+﻿@model ThesisWebApplication.Models.RepeatType
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>RepeatType</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+           Repeat Type
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RepeatType1)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

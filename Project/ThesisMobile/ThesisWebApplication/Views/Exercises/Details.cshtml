@@ -1,0 +1,42 @@
+﻿@model ThesisWebApplication.Models.Exercise
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Exercise</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+           Exercise Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExerciseName)
+        </dd>
+
+        <dt>
+            Exercise Description
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExerciseDescription)
+        </dd>
+
+        <dt>
+            Exercise Image
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExerciseImage)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

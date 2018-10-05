@@ -1,0 +1,5 @@
+INSERT INTO Category (CategoryID, CategoryName, CategoryDescription) VALUES (1,'Ongoing Challenges','');
+INSERT INTO Category (CategoryID, CategoryName, CategoryDescription) VALUES (2,'Upper Body Challenges','');
+INSERT INTO Category (CategoryID, CategoryName, CategoryDescription) VALUES (3,'Core Challenges','');
+INSERT INTO Category (CategoryID, CategoryName, CategoryDescription) VALUES (4,'Lower Body Challenges','');
+INSERT INTO Category (CategoryID, CategoryName, CategoryDescription) VALUES (5,'Cardio Challenges','');

@@ -1,0 +1,91 @@
+﻿<Page
+    x:Class="ThesisMobile.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ThesisMobile"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" >
+    <Page.BottomAppBar>
+        <CommandBar Background="#003D5B" Foreground="White">
+            <CommandBar.SecondaryCommands>
+                <AppBarButton x:Name="AboutButton" Label="About" Click="AboutButton_Click"/>
+            </CommandBar.SecondaryCommands>
+            <CommandBar.Content>
+                <Grid/>
+            </CommandBar.Content>
+            <AppBarButton Label="Sync" Foreground="White" Click="Sync_Click">
+                <AppBarButton.Icon>
+                    <BitmapIcon  UriSource="./Assets/Images/Sync.png" />
+                </AppBarButton.Icon>
+            </AppBarButton>
+            <AppBarButton Label="Exercises" Foreground="White" Click="Exercises_Click">
+                <AppBarButton.Icon>
+                    <BitmapIcon  UriSource="./Assets/Images/Athlete.png" />
+                </AppBarButton.Icon>
+            </AppBarButton>
+            <AppBarButton Label="Settings" Foreground="White" Click="Settings_Click">
+                <AppBarButton.Icon>
+                    <BitmapIcon  UriSource="./Assets/Images/Settings.png" />
+                </AppBarButton.Icon>
+            </AppBarButton>
+        </CommandBar>
+    </Page.BottomAppBar>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <ImageBrush Stretch="UniformToFill" ImageSource="/Assets/Images/bg.jpg" AlignmentY="Top" AlignmentX="Center"/>
+        </Grid.Background>
+        <TextBlock x:Name="SyncText" Text="Syncing please wait..." Foreground="White" FontSize="10" VerticalAlignment="Top" HorizontalAlignment="Center" Visibility="Collapsed"/>
+        <ProgressBar x:Name="SyncBar"  IsIndeterminate="True" Width="200" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="0" Visibility="Collapsed"/>
+        <Pivot x:Name="CategoryPivot" Grid.Row="1" FontSize="28"  Foreground="LightSkyBlue" Grid.RowSpan="2">
+            <Pivot.HeaderTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding CategoryName}" Foreground="White"/>
+                </DataTemplate>
+            </Pivot.HeaderTemplate>
+            <Pivot.ItemTemplate>
+                <DataTemplate>
+                    <ListView Name="ChallengeListView" HorizontalContentAlignment="Stretch" Margin="10"  ItemsSource="{Binding Challenges}">
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Background="#B22C3853" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Padding="10">
+                                    <HyperlinkButton CommandParameter="{Binding ID}" Background="Transparent" HorizontalAlignment="Stretch" BorderBrush="Transparent" Click="ItemClick_Click" Foreground="White" >
+                                        <HyperlinkButton.ContentTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding ChallengeTitle}" />
+                                            </DataTemplate>
+                                        </HyperlinkButton.ContentTemplate>
+                                    </HyperlinkButton>
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <!--<ListBox ItemsSource="{Binding Result}" >
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <TextBlock Text="{Binding Title}" />
+                                    <ListBox ItemsSource="{Binding MediaElementId}" >
+                                        <TextBlock Text="{Binding}" />
+                                    </ListBox>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>-->
+                </DataTemplate>
+            </Pivot.ItemTemplate>
+        </Pivot>
+
+
+    </Grid>
+</Page>
